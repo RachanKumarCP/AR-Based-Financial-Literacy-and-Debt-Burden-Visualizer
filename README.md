@@ -26,6 +26,7 @@ An AR mobile app that visualizes loan debt as a growing 3D object, using ML-base
 | **Revanth** | ML, Loan Math, Integration | Loan mathematics engine, ML training & evaluation, mobile ML preparation, integration layer, burden index. |
 | **Rachan** | Frontend & UI | Android UI screens, input forms, timeline slider, loan comparison, voice & regional language localization. |
 | **Rakesh** | Unity AR | AR Foundation / ARCore XR setup, plane detection, 3D object scaling (burden), tinting & shaking (risk). |
+| **Parthiv** | Cross-Domain Support | Assisting and collaborating across all three domains (ML/Math, Frontend UI, and Unity AR). |
 
 ---
 
