@@ -4,6 +4,7 @@ This document is the single source of truth for interfaces, data schemas, encodi
 - **Revanth's Modules**: Loan Mathematics, Machine Learning Risk Predictor, and Integration Engine.
 - **Rachan's Modules**: Android Frontend UI, Input Forms, Timeline Slider, and Results Screens.
 - **Rakesh's Modules**: Unity AR Scene, ARCore Plane Tracker, and 3D Visualizer.
+- **Parthiv**: Cross-domain support, assisting all three members across ML, Frontend, and Unity AR.
 
 ---
 
