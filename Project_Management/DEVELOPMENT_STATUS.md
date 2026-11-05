@@ -12,6 +12,7 @@ This tracking sheet records the current state of features, responsible team memb
 | **Loan Math — Financial Assumptions Spec** | Revanth | **COMPLETED** | `Revanth/Loan_Math/FINANCIAL_ASSUMPTIONS.md` | Mathematical formulas & edge cases documented |
 | **Loan Math — Core Engine & Formulas** | Revanth | **COMPLETED** | `Revanth/Loan_Math/engine.py`, `formulas.py`, `models.py` | 10 unit tests passing (100% pass rate) |
 | **Loan Math — Automated Test Suite** | Revanth | **COMPLETED** | `Testing/unit/test_loan_math.py` | Verified against manual calculations (Reducing, Flat, Bullet) |
+| **Unity C# Math & AR Bridge** | Revanth | **COMPLETED** | `Shared/csharp/DebtSightMathEngine.cs`, `DebtSightBridge.cs`, `IDebtVisualizer.cs` | Drop-in C# scripts ready for Rachan & Rakesh |
 | **ML — Dataset Research & Selection** | Revanth | **NOT STARTED** | `Revanth/ML/DATASET_RESEARCH.md` | Awaiting dataset verification |
 | **ML — Data Cleaning & Feature Pipeline** | Revanth | **NOT STARTED** | `Revanth/ML/pipeline.py` | None |
 | **ML — Baseline Model Training & Eval** | Revanth | **NOT STARTED** | `Revanth/ML/train.py`, `evaluate.py` | None |
