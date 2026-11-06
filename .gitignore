@@ -43,3 +43,13 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# ML Data — large CSV / Parquet files (do NOT commit raw data)
+Revanth/ML/data/raw/*.csv
+Revanth/ML/data/raw/*.parquet
+Revanth/ML/data/raw/*.xlsx
+
+# ML Models — large binary artifacts (commit evaluation_metrics.json only)
+Revanth/ML/models/*.joblib
+Revanth/ML/models/*.onnx
+Revanth/ML/models/*.pkl

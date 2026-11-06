@@ -13,10 +13,10 @@ This tracking sheet records the current state of features, responsible team memb
 | **Loan Math — Core Engine & Formulas** | Revanth | **COMPLETED** | `Revanth/Loan_Math/engine.py`, `formulas.py`, `models.py` | 10 unit tests passing (100% pass rate) |
 | **Loan Math — Automated Test Suite** | Revanth | **COMPLETED** | `Testing/unit/test_loan_math.py` | Verified against manual calculations (Reducing, Flat, Bullet) |
 | **Unity C# Math & AR Bridge** | Revanth | **COMPLETED** | `Shared/csharp/DebtSightMathEngine.cs`, `DebtSightBridge.cs`, `IDebtVisualizer.cs` | Drop-in C# scripts ready for Rachan & Rakesh |
-| **ML — Dataset Research & Selection** | Revanth | **NOT STARTED** | `Revanth/ML/DATASET_RESEARCH.md` | Awaiting dataset verification |
-| **ML — Data Cleaning & Feature Pipeline** | Revanth | **NOT STARTED** | `Revanth/ML/pipeline.py` | None |
-| **ML — Baseline Model Training & Eval** | Revanth | **NOT STARTED** | `Revanth/ML/train.py`, `evaluate.py` | None |
-| **ML — Mobile Inference (TFLite Prep)** | Revanth | **NOT STARTED** | `Revanth/ML/export.py` | None |
+| **ML — Dataset Research & Selection** | Revanth | **IN PROGRESS** | `Revanth/ML/DATASET_RESEARCH.md` | Identified LTFS, Microfinance & NAFIS candidates |
+| **ML — Data Cleaning & Feature Pipeline** | Revanth | **IMPLEMENTED** | `Revanth/ML/data_loader.py`, `preprocessor.py` | Architecture verified with 3 automated unit tests |
+| **ML — Baseline Model Training & Eval** | Revanth | **IMPLEMENTED** | `Revanth/ML/train.py`, `evaluate.py` | Pipeline supports Logistic Regression, GB, RF + calibration |
+| **ML — Mobile Inference (ONNX / TFLite)** | Revanth | **IMPLEMENTED** | `Revanth/ML/export.py` | ONNX export structure ready for Unity Sentis |
 | **Integration — Burden Index Engine** | Revanth | **NOT STARTED** | `Revanth/Integration/burden.py` | None |
 | **Integration — Shared Result Builder** | Revanth | **NOT STARTED** | `Revanth/Integration/engine.py` | None |
 | **Frontend UI — Loan Input Screen** | Rachan | **NOT STARTED** | External Android UI | None |
