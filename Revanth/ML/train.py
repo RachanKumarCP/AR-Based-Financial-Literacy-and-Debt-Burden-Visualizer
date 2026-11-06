@@ -36,6 +36,7 @@ class DebtSightTrainer:
         try:
             import joblib
             from sklearn.calibration import CalibratedClassifierCV
+            from sklearn.frozen import FrozenEstimator
             from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
             from sklearn.linear_model import LogisticRegression
             from sklearn.model_selection import train_test_split
@@ -94,9 +95,8 @@ class DebtSightTrainer:
         # 5. Probability Calibration (Platt Scaling via Sigmoid)
         # Guarantees that predicted probability reflects empirical default frequency
         calibrated_pipeline = CalibratedClassifierCV(
-            estimator=full_pipeline,
+            estimator=FrozenEstimator(full_pipeline),
             method="sigmoid",
-            cv="prefit",
         )
         calibrated_pipeline.fit(X_test, y_test)
 

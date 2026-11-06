@@ -1,0 +1,21 @@
+{
+  "logistic_regression": {
+    "model": "Logistic Regression (Calibrated)",
+    "roc_auc": 0.8281,
+    "pr_auc": 0.5983,
+    "brier": 0.1252,
+    "f1": 0.4853,
+    "precision": 0.6654,
+    "recall": 0.3819
+  },
+  "gradient_boosting": {
+    "model": "Gradient Boosting (Calibrated)",
+    "roc_auc": 0.8536,
+    "pr_auc": 0.6638,
+    "brier": 0.1143,
+    "f1": 0.5712,
+    "precision": 0.6885,
+    "recall": 0.488
+  },
+  "best": "gradient_boosting"
+}
