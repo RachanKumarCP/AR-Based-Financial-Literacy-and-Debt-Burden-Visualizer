@@ -1,0 +1,20 @@
+{
+  "loan_intent": {
+    "DEBTCONSOLIDATION": 0,
+    "EDUCATION": 1,
+    "HOMEIMPROVEMENT": 2,
+    "MEDICAL": 3,
+    "PERSONAL": 4,
+    "VENTURE": 5
+  },
+  "home_ownership": {
+    "MORTGAGE": 0,
+    "OTHER": 1,
+    "OWN": 2,
+    "RENT": 3
+  },
+  "default_on_file": {
+    "N": 0,
+    "Y": 1
+  }
+}
