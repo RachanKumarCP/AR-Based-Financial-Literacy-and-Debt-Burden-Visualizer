@@ -12,17 +12,18 @@ This tracking sheet records the current state of features, responsible team memb
 | **Loan Math — Financial Assumptions Spec** | Revanth | **COMPLETED** | `Revanth/Loan_Math/FINANCIAL_ASSUMPTIONS.md` | Mathematical formulas & edge cases documented |
 | **Loan Math — Core Engine & Formulas** | Revanth | **COMPLETED** | `Revanth/Loan_Math/engine.py`, `formulas.py`, `models.py` | 10 unit tests passing (100% pass rate) |
 | **Loan Math — Automated Test Suite** | Revanth | **COMPLETED** | `Testing/unit/test_loan_math.py` | Verified against manual calculations (Reducing, Flat, Bullet) |
-| **Unity C# Math & AR Bridge** | Revanth | **COMPLETED** | `Shared/csharp/DebtSightMathEngine.cs`, `DebtSightBridge.cs`, `IDebtVisualizer.cs` | Drop-in C# scripts ready for Rachan & Rakesh |
-| **ML — Dataset Research & Selection** | Revanth | **IN PROGRESS** | `Revanth/ML/DATASET_RESEARCH.md` | Identified LTFS, Microfinance & NAFIS candidates |
-| **ML — Data Cleaning & Feature Pipeline** | Revanth | **IMPLEMENTED** | `Revanth/ML/data_loader.py`, `preprocessor.py` | Architecture verified with 3 automated unit tests |
-| **ML — Baseline Model Training & Eval** | Revanth | **IMPLEMENTED** | `Revanth/ML/train.py`, `evaluate.py` | Pipeline supports Logistic Regression, GB, RF + calibration |
-| **ML — Mobile Inference (ONNX / TFLite)** | Revanth | **IMPLEMENTED** | `Revanth/ML/export.py` | ONNX export structure ready for Unity Sentis |
-| **Integration — Burden Index Engine** | Revanth | **NOT STARTED** | `Revanth/Integration/burden.py` | None |
-| **Integration — Shared Result Builder** | Revanth | **NOT STARTED** | `Revanth/Integration/engine.py` | None |
-| **Frontend UI — Loan Input Screen** | Rachan | **NOT STARTED** | External Android UI | None |
-| **Frontend UI — Timeline & Comparison** | Rachan | **NOT STARTED** | External Android UI | None |
-| **Unity AR — Scene & Plane Detection** | Rakesh | **NOT STARTED** | External Unity AR | None |
-| **Unity AR — Visualizer (Burden & Risk)** | Rakesh | **NOT STARTED** | `IDebtVisualizer.cs` | None |
+| **Unity C# Math & AR Bridge** | Revanth | **COMPLETED** | `Shared/csharp/DebtSightMathEngine.cs`, `DebtSightBridge.cs`, `DebtSightRiskPredictor.cs`, `IDebtVisualizer.cs` | Drop-in C# scripts ready with Unity Sentis support |
+| **ML — Dataset Research & Selection** | Revanth | **COMPLETED** | `Revanth/ML/DATASET_RESEARCH.md` | Selected `credit_risk_dataset.csv` (32,581 records, 21.8% default rate) |
+| **ML — Data Cleaning & Feature Pipeline** | Revanth | **COMPLETED** | `Revanth/ML/data_loader.py`, `preprocessor.py`, `run_pipeline_v2.py` | 10 predictive features with median imputation and scaling |
+| **ML — Baseline Model Training & Eval** | Revanth | **COMPLETED** | `Revanth/ML/train.py`, `evaluate.py`, `run_pipeline_v2.py` | Tuned GB: ROC-AUC 0.9246, PR-AUC 0.868, F1 0.7956, Precision 0.9063 |
+| **ML — Mobile Inference (ONNX / Sentis)** | Revanth | **COMPLETED** | `Revanth/ML/models/debtsight_risk_model.onnx` | Pure float tensor exported and verified for Unity Sentis |
+| **Integration — Burden Index Engine** | Revanth | **COMPLETED** | `Revanth/Integration/burden.py` | Verified decay: `0.6 * debt + 0.4 * risk` |
+| **Integration — Master Engine & Results** | Revanth | **COMPLETED** | `Revanth/Integration/engine.py`, `__init__.py` | Full pipeline: Math + ML + Burden + Formal comparison |
+| **Integration — Automated Test Suite** | Revanth | **COMPLETED** | `Testing/integration/test_integration_pipeline.py` | 4 end-to-end integration tests (100% pass rate) |
+| **Frontend UI — Loan Input Screen** | Rachan | **IN PROGRESS** | Unity UI Canvas, `LoanUIController.cs` | In active Unity development |
+| **Frontend UI — Timeline & Comparison** | Rachan | **IN PROGRESS** | Unity UI `ResultsOverlayPanel`, Timeline Slider | In active Unity development |
+| **Unity AR — Scene & Plane Detection** | Rakesh | **IN PROGRESS** | XR Origin, AR Plane Manager, Raycast Manager | In active Unity development |
+| **Unity AR — Visualizer (Burden & Risk)** | Rakesh | **IN PROGRESS** | `DebtVisualizerReference.cs` | 3D object scaling and danger tinting |
 
 ---
 
