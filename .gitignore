@@ -49,7 +49,6 @@ Revanth/ML/data/raw/*.csv
 Revanth/ML/data/raw/*.parquet
 Revanth/ML/data/raw/*.xlsx
 
-# ML Models — large binary artifacts (commit evaluation_metrics.json only)
+# ML Models — large binary artifacts (commit production ONNX and JSON metrics)
 Revanth/ML/models/*.joblib
-Revanth/ML/models/*.onnx
 Revanth/ML/models/*.pkl
