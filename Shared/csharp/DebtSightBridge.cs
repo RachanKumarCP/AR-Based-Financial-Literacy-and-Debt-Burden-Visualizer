@@ -26,13 +26,21 @@ namespace DebtSight
         public float currentRisk = 0.4f;
         public List<float> monthlyBurdenIndices = new List<float>();
 
+        private DebtSightRiskPredictor _riskPredictor;
+
         // Events for Rachan's UI to listen to
         public event Action<LoanScheduleResult, float> OnCalculationCompleted;
         public event Action<int, float, float> OnTimelineMonthChanged; // (month, balance, burden)
 
         private void Awake()
         {
+            _riskPredictor = new DebtSightRiskPredictor();
             ResolveVisualizer();
+        }
+
+        private void OnDestroy()
+        {
+            _riskPredictor?.Dispose();
         }
 
         private void Start()
@@ -63,8 +71,17 @@ namespace DebtSight
             // 1. Calculate financial amortization schedule using pure C# engine
             currentSchedule = DebtSightMathEngine.Calculate(currentInput);
 
-            // 2. Compute risk probability (calibrated baseline until ONNX ML model is linked)
-            currentRisk = EstimateDefaultRisk(currentInput, lenderType, incomeBracket);
+            // 2. Compute risk probability using ML Predictor (or fallback)
+            float apr = DebtSightMathEngine.ToAnnualPercentageRate(currentInput.interestRate, currentInput.ratePeriod);
+            currentRisk = _riskPredictor != null 
+                ? _riskPredictor.PredictDefaultRisk(
+                    currentInput.principal,
+                    apr,
+                    currentSchedule.monthlyPayment,
+                    currentInput.tenureMonths,
+                    lenderType,
+                    incomeBracket)
+                : EstimateDefaultRisk(currentInput, lenderType, incomeBracket);
 
             // 3. Compute monthly burden indices: burden(t) = 0.6 * normalized_debt(t) + 0.4 * risk
             monthlyBurdenIndices.Clear();
