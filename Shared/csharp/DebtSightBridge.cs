@@ -53,7 +53,26 @@ namespace DebtSight
         {
             if (visualizerObject != null)
             {
-                _visualizer = visualizerObject.GetComponent<IDebtVisualizer>();
+                _visualizer = visualizerObject.GetComponentInChildren<IDebtVisualizer>();
+            }
+
+            // Fallback: auto-detect visualizer in the scene if unassigned in inspector
+            if (_visualizer == null)
+            {
+                DebtVisualizerReference autoFound = FindFirstObjectByType<DebtVisualizerReference>();
+                if (autoFound == null)
+                {
+                    #pragma warning disable CS0618
+                    autoFound = FindObjectOfType<DebtVisualizerReference>();
+                    #pragma warning restore CS0618
+                }
+
+                if (autoFound != null)
+                {
+                    _visualizer = autoFound;
+                    visualizerObject = autoFound.gameObject;
+                    Debug.Log("[DebtSight] Auto-linked DebtVisualizer to " + visualizerObject.name);
+                }
             }
         }
 
@@ -63,7 +82,7 @@ namespace DebtSight
         /// </summary>
         public void Recalculate()
         {
-            if (_visualizer == null && visualizerObject != null)
+            if (_visualizer == null)
             {
                 ResolveVisualizer();
             }
